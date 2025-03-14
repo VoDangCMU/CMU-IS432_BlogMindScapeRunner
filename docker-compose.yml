@@ -1,13 +1,11 @@
 services:
   psql:
     image: postgres
-    ports:
-      - 5432:5432
     volumes:
       - ./psql-data:/var/lib/postgresql/data
       - ./psql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    expose:
-      - 5432
+    ports:
+      - ${DB_PORT}:5432
     environment:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
   mindscape-backend:

@@ -29,17 +29,17 @@ services:
       - DB_DATABASE=${DB_DATABASE}
       - SALT_ROUND=${SALT_ROUND}
       - DB_HOST=${DB_HOST}
-  mindscape-frontend:
-    build: 
-      context: ./CMU-IS432_BlogMindScapeFrontend
-      dockerfile: Dockerfile
-    ports:
-      - 3005:3005
-    expose:
-      - 3005
-    depends_on:
-      - psql
-      - mindscape-backend
+  # mindscape-frontend:
+  #   build: 
+  #     context: ./CMU-IS432_BlogMindScapeFrontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 3005:3005
+  #   expose:
+  #     - 3005
+  #   depends_on:
+  #     - psql
+  #     - mindscape-backend
   pgadmin4:
     image: dpage/pgadmin4
     ports:

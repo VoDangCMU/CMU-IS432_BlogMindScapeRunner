@@ -22,9 +22,9 @@ cp ./commons/.env.template $EXPRESS_ENV_FILE
 echo "Migrating..."
 sh ./scripts/migrate.sh
 
-docker-compose down
+docker-compose down || docker compose down
 
-docker-compose up psql -d
+docker-compose up psql -d || docker compose up psql -d
 
 sleep 10
-docker-compose up -d
+docker-compose up -d || docker compose up -d

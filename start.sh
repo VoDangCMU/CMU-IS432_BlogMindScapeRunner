@@ -27,4 +27,4 @@ docker-compose down
 docker-compose up psql -d
 
 sleep 10
-docker-compose up
+docker-compose up -d
